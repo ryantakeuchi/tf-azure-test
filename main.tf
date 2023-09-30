@@ -9,9 +9,9 @@ terraform {
 
 # 2. Configure the AzureRM Provider
 provider "azurerm" {
+  features {}
   subscription_id = var.subscription_id
   tenant_id = var.tenant_id
-  features {}
 }
 
 # 4. Create a virtual network within the resource group
