@@ -10,6 +10,7 @@ terraform {
 # 2. Configure the AzureRM Provider
 provider "azurerm" {
   subscription_id = var.subscription_id
+  tenant_id = var.tenant_id
   features {}
 }
 
