@@ -1,3 +1,5 @@
+variable "client_secret" {}
+
 terraform {
   required_providers {
     azurerm = {
