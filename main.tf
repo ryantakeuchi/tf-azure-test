@@ -1,0 +1,21 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "=3.0.1"
+    }
+  }
+}
+
+# 2. Configure the AzureRM Provider
+provider "azurerm" {
+  features {}
+}
+
+# 4. Create a virtual network within the resource group
+resource "azurerm_virtual_network" "example" {
+  name                = "example-network"
+  resource_group_name = "azure-demo-rt-test"
+  location            = "West US 2"
+  address_space       = ["172.16.0.0/16"]
+}
