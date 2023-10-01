@@ -13,7 +13,7 @@ terraform {
 
 # 1. Generate a random id
 resource "random_id" "id" {
-  byte_length = 8
+  byte_length = 4
 }
 
 locals {
