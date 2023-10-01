@@ -32,8 +32,8 @@ provider "azurerm" {
 
 # 4. Create a virtual network within the resource group
 resource "azurerm_virtual_network" "example" {
-  name                = "example-network"
-  resource_group_name = "azure-demo-rt-test-${random_id.id.hex}"
+  name                = "example-network-${random_id.id.hex}"
+  resource_group_name = "azure-demo-rt-test"
   location            = "West US 2"
   address_space       = ["172.16.0.0/16"]
 }
