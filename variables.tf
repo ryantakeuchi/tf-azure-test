@@ -18,3 +18,6 @@ variable client_secret {
   description = "Azure Service Principal password"
 }
 
+variable name {
+  type = string
+}
