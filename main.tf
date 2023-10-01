@@ -12,9 +12,12 @@ terraform {
 }
 
 # 1. Generate a random id
-resource "random_string" "random_id" {}
+resource "random_id" "id" {
+  byte_length = 8
+}
+
 locals {
-  run_id = random_id.result
+  run_id  = (var.name != "" ? var.name : random_id.id.hex)
 }
 
 # 2. Configure the AzureRM Provider
