@@ -4,7 +4,17 @@ terraform {
       source = "hashicorp/azurerm"
       version = "=3.0.1"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~>3.5.0"
+    }
   }
+}
+
+# 1. Generate a random id
+resource "random_string" "random_id" {}
+locals {
+  run_id = random_id.result
 }
 
 # 2. Configure the AzureRM Provider
@@ -23,4 +33,9 @@ resource "azurerm_virtual_network" "example" {
   resource_group_name = "azure-demo-rt-test"
   location            = "West US 2"
   address_space       = ["172.16.0.0/16"]
+}
+
+# 5. Display randomly generated uuid
+output "randomly-generated-number" {
+  value = local.run_id
 }
