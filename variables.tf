@@ -18,8 +18,3 @@ variable client_secret {
   description = "Azure Service Principal password"
 }
 
-resource "random_id" "digits" {
-  byte_length = 8
-}
-
-prefix = "${random_id.digits.hex}"
